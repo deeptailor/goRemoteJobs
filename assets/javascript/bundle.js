@@ -27721,6 +27721,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var isMobile = {
+  Android: function Android() {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function BlackBerry() {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function iOS() {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function Opera() {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function Windows() {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function any() {
+    return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+  }
+};
+
 var Main = function (_React$Component) {
   _inherits(Main, _React$Component);
 
@@ -27730,14 +27751,14 @@ var Main = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
     _this.changeOverlayWidth = _this.changeOverlayWidth.bind(_this);
-    _this.state = { overlayWidth: '100%', overlayMin: false, sidebar: 0, sideBarSize: 40 };
+    _this.state = { overlayWidth: '100%', overlayMin: false, sidebar: 0, sideBarSize: 30 };
     return _this;
   }
 
   _createClass(Main, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      if (/Mobi/.test(navigator.userAgent)) {
+      if (isMobile.any()) {
         this.setState({ sideBarSize: 80 });
       }
     }
