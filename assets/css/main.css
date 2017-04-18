@@ -143,6 +143,8 @@
   border: none;
   color: white;
   font-size: 16px;
+  padding: 5px;
+  width: 80%;
 }
 
 .form-login > div > input[type="password"]{
@@ -151,8 +153,48 @@
   border: none;
   color: white;
   font-size: 16px;
+  padding: 5px;
+  width: 80%;
+}
+
+.form-login > div > input[type="name"]{
+  margin: 0 15px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  width: 80%;
+}
+
+.form-login > div > input[list=education]{
+  margin: 0 5px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  width: 80%;
 }
 
 input::-webkit-input-placeholder{
   color: #d1d1d1;
+}
+
+.submit-button{
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ffbe2d;
+  background: #ffbe2d;
+  color: white;
+  margin-left: 30px;
+}
+
+.submit-button:hover{
+  background-color: #d1d1d1;
+  color: black;
+  cursor: pointer;
+  border-color: #ffbe2d;
 }

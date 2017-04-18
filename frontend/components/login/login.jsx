@@ -12,8 +12,8 @@ class Login extends React.Component{
         <div className="form-login">
           <div><i className="fa fa-envelope" aria-hidden="true"></i><input type="email" placeholder="Email"></input></div>
           <div><i className="fa fa-lock" aria-hidden="true"></i><input type="password" placeholder="Password"></input></div>
-          <div><i className="fa fa-lock" aria-hidden="true"></i><input type="password" placeholder="Confirm Password"></input></div>
         </div>
+        <div className="submit-button">Sign In</div>
       </div>
     )
   }

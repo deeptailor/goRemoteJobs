@@ -27743,7 +27743,7 @@ var Main = function (_React$Component) {
         if (_this2.state.overlayMin) {
           _this2.setState({ overlayWidth: '100%', overlayMin: false, sidebar: 0 });
         } else {
-          _this2.setState({ overlayWidth: num + '%', overlayMin: true, sidebar: 30 });
+          _this2.setState({ overlayWidth: num + '%', overlayMin: true, sidebar: 40 });
         }
       };
     }
@@ -27766,7 +27766,7 @@ var Main = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'navigation-hamburger', onClick: this.changeOverlayWidth(70) },
+              { className: 'navigation-hamburger', onClick: this.changeOverlayWidth(60) },
               _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
             )
           )
@@ -27845,13 +27845,12 @@ var Login = function (_React$Component) {
             null,
             _react2.default.createElement("i", { className: "fa fa-lock", "aria-hidden": "true" }),
             _react2.default.createElement("input", { type: "password", placeholder: "Password" })
-          ),
-          _react2.default.createElement(
-            "div",
-            null,
-            _react2.default.createElement("i", { className: "fa fa-lock", "aria-hidden": "true" }),
-            _react2.default.createElement("input", { type: "password", placeholder: "Confirm Password" })
           )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "submit-button" },
+          "Sign In"
         )
       );
     }
@@ -28040,6 +28039,53 @@ var Signup = function (_React$Component) {
             "Sign Up"
           ),
           "\xA0for your account"
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "form-login" },
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement("i", { className: "fa fa-user", "aria-hidden": "true" }),
+            _react2.default.createElement("input", { type: "name", placeholder: "First and Last Name" })
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement("i", { className: "fa fa-envelope", "aria-hidden": "true" }),
+            _react2.default.createElement("input", { type: "email", placeholder: "Email" })
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement("i", { className: "fa fa-graduation-cap", "aria-hidden": "true" }),
+            _react2.default.createElement("input", { list: "education", placeholder: "Education" }),
+            _react2.default.createElement(
+              "datalist",
+              { id: "education" },
+              _react2.default.createElement("option", { value: "High School" }),
+              _react2.default.createElement("option", { value: "Bachelor's" }),
+              _react2.default.createElement("option", { value: "Master's" }),
+              _react2.default.createElement("option", { value: "Doctorate" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement("i", { className: "fa fa-lock", "aria-hidden": "true" }),
+            _react2.default.createElement("input", { type: "password", placeholder: "Password" })
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement("i", { className: "fa fa-lock", "aria-hidden": "true" }),
+            _react2.default.createElement("input", { type: "password", placeholder: "Confirm Password" })
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "submit-button" },
+          "Sign Up"
         )
       );
     }
