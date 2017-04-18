@@ -6,15 +6,21 @@ class Main extends React.Component{
   constructor(props){
     super(props);
     this.changeOverlayWidth = this.changeOverlayWidth.bind(this);
-    this.state = {overlayWidth:'100%', overlayMin:false, sidebar: 0}
+    this.state = {overlayWidth:'100%', overlayMin:false, sidebar: 0, sideBarSize:40}
   }
 
-  changeOverlayWidth(num){
+  componentWillMount(){
+    if (/Mobi/.test(navigator.userAgent)) {
+      this.setState({sideBarSize: 80})
+    }
+  }
+
+  changeOverlayWidth(){
     return () => {
       if(this.state.overlayMin){
         this.setState({overlayWidth: '100%', overlayMin:false, sidebar: 0});
       } else {
-        this.setState({overlayWidth: `${num}%`, overlayMin:true, sidebar: 40});
+        this.setState({overlayWidth: `${100-this.state.sideBarSize}%`, overlayMin:true, sidebar: this.state.sideBarSize});
       }
     }
   }

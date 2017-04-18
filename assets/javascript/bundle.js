@@ -27730,20 +27730,27 @@ var Main = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
     _this.changeOverlayWidth = _this.changeOverlayWidth.bind(_this);
-    _this.state = { overlayWidth: '100%', overlayMin: false, sidebar: 0 };
+    _this.state = { overlayWidth: '100%', overlayMin: false, sidebar: 0, sideBarSize: 40 };
     return _this;
   }
 
   _createClass(Main, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      if (/Mobi/.test(navigator.userAgent)) {
+        this.setState({ sideBarSize: 80 });
+      }
+    }
+  }, {
     key: 'changeOverlayWidth',
-    value: function changeOverlayWidth(num) {
+    value: function changeOverlayWidth() {
       var _this2 = this;
 
       return function () {
         if (_this2.state.overlayMin) {
           _this2.setState({ overlayWidth: '100%', overlayMin: false, sidebar: 0 });
         } else {
-          _this2.setState({ overlayWidth: num + '%', overlayMin: true, sidebar: 40 });
+          _this2.setState({ overlayWidth: 100 - _this2.state.sideBarSize + '%', overlayMin: true, sidebar: _this2.state.sideBarSize });
         }
       };
     }
