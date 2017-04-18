@@ -28134,7 +28134,7 @@ var IsMobile = {
         return navigator.userAgent.match(/IEMobile/i);
     },
     any: function any() {
-        return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        return IsMobile.Android() || IsMobile.BlackBerry() || IsMobile.iOS() || IsMobile.Opera() || IsMobile.Windows();
     }
 };
 
