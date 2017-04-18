@@ -1,38 +1,20 @@
 import React from 'react';
+import IsMobile from '../../util/isMobile.js';
 
 import Sidebar from '../sidebar/sidebar.jsx';
 
-var isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
-};
+
 
 class Main extends React.Component{
   constructor(props){
     super(props);
     this.changeOverlayWidth = this.changeOverlayWidth.bind(this);
-    this.state = {overlayWidth:'100%', overlayMin:false, sidebar: 0, sideBarSize:30}
+    this.state = {overlayWidth:'100%', overlayMin:false, sidebar: 0, sideBarSize:30, isMobile: false}
   }
 
   componentWillMount(){
-    if (isMobile.any()) {
-      this.setState({sideBarSize: 80})
+    if (IsMobile.any()) {
+      this.setState({sideBarSize: 100, isMobile: true})
     }
   }
 

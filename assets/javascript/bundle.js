@@ -27709,6 +27709,10 @@ var _react = __webpack_require__(81);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _isMobile = __webpack_require__(247);
+
+var _isMobile2 = _interopRequireDefault(_isMobile);
+
 var _sidebar = __webpack_require__(245);
 
 var _sidebar2 = _interopRequireDefault(_sidebar);
@@ -27721,27 +27725,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var isMobile = {
-  Android: function Android() {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function BlackBerry() {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iOS: function iOS() {
-    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-  },
-  Opera: function Opera() {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function Windows() {
-    return navigator.userAgent.match(/IEMobile/i);
-  },
-  any: function any() {
-    return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-  }
-};
-
 var Main = function (_React$Component) {
   _inherits(Main, _React$Component);
 
@@ -27751,15 +27734,15 @@ var Main = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
     _this.changeOverlayWidth = _this.changeOverlayWidth.bind(_this);
-    _this.state = { overlayWidth: '100%', overlayMin: false, sidebar: 0, sideBarSize: 30 };
+    _this.state = { overlayWidth: '100%', overlayMin: false, sidebar: 0, sideBarSize: 30, isMobile: false };
     return _this;
   }
 
   _createClass(Main, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
-      if (isMobile.any()) {
-        this.setState({ sideBarSize: 80 });
+      if (_isMobile2.default.any()) {
+        this.setState({ sideBarSize: 100, isMobile: true });
       }
     }
   }, {
@@ -28123,6 +28106,39 @@ var Signup = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Signup;
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var IsMobile = {
+    Android: function Android() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function BlackBerry() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function iOS() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function Opera() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function Windows() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function any() {
+        return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+    }
+};
+
+exports.default = IsMobile;
 
 /***/ })
 /******/ ]);
