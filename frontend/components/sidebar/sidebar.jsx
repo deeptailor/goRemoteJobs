@@ -30,7 +30,7 @@ class Sidebar extends React.Component{
 
   render(){
     return(
-      <div className="sidebar-container" style={{width:`${this.props.width}%`}}>
+      <div className="sidebar-container" style={{minWidth:`${this.props.width}px`}}>
         <div className="login-signup-container">
           <div className="l-button" onClick={this.showForm('login')}>
             <i className="fa fa-unlock" aria-hidden="true"></i>

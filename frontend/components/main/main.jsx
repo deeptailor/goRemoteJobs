@@ -9,7 +9,7 @@ class Main extends React.Component{
   constructor(props){
     super(props);
     this.changeOverlayWidth = this.changeOverlayWidth.bind(this);
-    this.state = {overlayWidth:'100%', overlayMin:false, sidebar: 0, sideBarSize:30, isMobile: false}
+    this.state = {overlayWidth:'100%', overlayMin:false, sidebar: 0, sideBarSize:400, isMobile: false}
   }
 
   componentWillMount(){
@@ -23,7 +23,7 @@ class Main extends React.Component{
       if(this.state.overlayMin){
         this.setState({overlayWidth: '100%', overlayMin:false, sidebar: 0});
       } else {
-        this.setState({overlayWidth: `${100-this.state.sideBarSize}%`, overlayMin:true, sidebar: this.state.sideBarSize});
+        this.setState({overlayWidth: `${100-this.state.sideBarSize}px`, overlayMin:true, sidebar: this.state.sideBarSize});
       }
     }
   }
@@ -34,7 +34,7 @@ class Main extends React.Component{
         <div className="main-overlay" style={{width: this.state.overlayWidth}}>
           <navigation className="navigation-container">
             <div className="navigation-logo"><img src="https://res.cloudinary.com/deeptailor/image/upload/c_scale,w_522/v1492465630/goRemoteJobs/goRemote-logo.png"></img></div>
-            <div className="navigation-hamburger" onClick={this.changeOverlayWidth(60)}>
+            <div className="navigation-hamburger" onClick={this.changeOverlayWidth()}>
               <i className="fa fa-bars" aria-hidden="true"></i>
             </div>
           </navigation>

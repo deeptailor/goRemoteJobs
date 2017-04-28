@@ -35,7 +35,7 @@
 
 .sidebar-container{
   box-sizing: border-box;
-  background: white;
+  background: #636363;
   width: 0%;
   height: 100%;
   transition: all 0.5s linear;
@@ -51,9 +51,9 @@
   min-width: 350px;
   display: flex;
   width: 90%;
-  border: 2px solid #636363;
+  border: 2px solid #757575;
   border-radius: 10px;
-  color: #636363;
+  color: #757575;
 }
 
 .l-button{
@@ -63,6 +63,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 0 5px 5px 0;
+  border: 1px solid white;
+  color: white;
 }
 
 .l-button:nth-child(1){
@@ -74,12 +76,12 @@
 }
 
 .l-button:hover{
-  background: #636363;
+  background: #ffbe2d;
   color: white;
 }
 
 .l-button:hover > i{
-  color: #ffbe2d;
+  color: white;
 }
 
 .label{
@@ -97,8 +99,8 @@
 
 .separator{
   min-height: 100%;
-  width: 2px;
-  background-color: #636363;
+  width: 1px;
+  background-color: white;
 }
 
 .terms-of-service-container{
@@ -116,7 +118,7 @@
 .login-container > h1{
   padding-left: 30px;
   font-size: 28px;
-  color: #636363;
+  color: white;
 }
 
 .bold{
@@ -135,6 +137,10 @@
   color: white;
   border-top: 2px solid #d1d1d1;
   font-size: 20px;
+}
+
+.form-login > div:last-child{
+  border-bottom: 2px solid #d1d1d1;
 }
 
 .form-login > div > input[type="email"]{
